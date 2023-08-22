@@ -1,0 +1,12 @@
+#h1{
+    color: red;
+}
+
+div{
+    border-color: black;
+    border: solid;
+}
+
+h1{
+    border: inherit;
+}

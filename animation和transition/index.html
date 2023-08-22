@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* div{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            transition: width 2s, height 2s;
+            &:hover{
+                width: 400px;
+                height: 400px;
+            }
+        } */
+        div{
+            &::before{content: "1111111";};
+            &::after{content: "xxx1111111";};
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            animation-name: example;
+            animation-duration: 16s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example{
+            0% {background-color: red;}
+            25% {
+                /* width: 400px; */
+                background-color: green;
+            }
+            50% {
+                transform: scale(1,1)
+                background-color: yellow;
+            }
+            75% {
+                transform: scale(0,0);
+                background-color: black;
+            }
+            100% {
+                transform: scale(1,1);
+                background-color: red;
+            }
+        }
+    </style>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div>div</div>
+</head>
+<body>
+    
+</body>
+</html>

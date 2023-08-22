@@ -1,0 +1,58 @@
+<!-- 设置W3C盒子，怪异盒子，
+    获取他们的宽高 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: greenyellow;
+    }
+
+    #w3c{
+        /* height: 100px;
+        width: 100px; */
+        padding: 10px;
+        /* background会覆盖内容，内边距，边框，不会到外边距*/
+        background-color: yellow;
+        border: 5px solid transparent;
+        box-sizing: content-box;
+        margin: 10px;
+    }
+
+    #IE{
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        background-color: black;
+        box-sizing: border-box;
+    }
+
+</style>
+<body>
+    
+    <div id="w3c" style="height: 200px; width: 100px;">
+
+    </div>
+    <div id="IE">
+
+    </div>
+    <script>
+        var w3c = document.getElementById('w3c')
+        var w3c_style = window.getComputedStyle(w3c)
+        var ie = document.getElementById('IE')
+        var ie_style = window.getComputedStyle(ie)
+
+        console.log(`w3c盒子宽: ${w3c_style.width}, 高: ${w3c_style.height}`)
+        console.log(`w3c盒子宽+内边距和border: ${w3c.offsetWidth}, 高: ${w3c.offsetHeight}`)
+        console.log(`IE盒子宽: ${ie_style.width}, 高: ${ie_style.height}`)
+        console.log(`IE盒子宽: ${ie.offsetWidth}, 高: ${ie.offsetHeight}`)
+
+    </script>
+    
+</body>
+</html>
